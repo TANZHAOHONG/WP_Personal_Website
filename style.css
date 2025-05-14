@@ -1,0 +1,146 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  /* Remove body padding to avoid scroll issues */
+  /* padding: 20px; */
+}
+
+/* FLEX LAYOUT TO PIN FOOTER */
+.wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Main takes up remaining space */
+main {
+  flex: 1;
+  padding: 20px;
+  /* Remove margin so layout isn't broken */
+  /* margin: 20px 0; */
+}
+
+/* HEADER STYLING */
+header {
+  background: #333;
+  color: white;
+  padding: 10px;
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  padding: 5px 10px;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #007BFF; 
+}
+
+/* HERO & PROJECTS STYLING */
+.hero, .about-me, .projects-grid {
+  padding: 20px;
+}
+
+.profile-img {
+  opacity: 0;
+  transition: opacity 1s ease-in, transform 0.3s ease;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.profile-img.loaded {
+  opacity: 1;
+}
+
+/* Project images fade-in effect */
+.project-img {
+  opacity: 0;
+  transition: opacity 1s ease-in;
+}
+
+/* Add 'loaded' class to make the image fade in */
+.profile-img.loaded {
+  opacity: 1;
+}
+.project-img {
+  opacity: 0;
+  transition: opacity 1s ease-in;
+}
+
+.project-img.fade-in {
+  opacity: 1;
+}
+
+/* PROJECT IMAGE HANDLING (consistent height, keep aspect ratio) */
+.project-img {
+  height: 180px;
+  width: 100%;
+  object-fit: contain;
+  border-radius: 8px;
+  display: block;
+  background-color: #f9f9f9;
+  margin-bottom: 10px;
+}
+
+/* PROJECT GRID */
+.projects-grid {
+  display: grid;
+  grid-template-columns: 1fr; /* Forces single-column layout */
+  gap: 20px;
+  align-items: center;
+}
+
+
+.project-card {
+  border: 1px solid #ccc;
+  padding: 15px;
+  background: #f9f9f9;
+  transition: transform 0.3s ease-in-out;
+
+}
+
+.project-card:hover {
+  transform: scale(1.05);
+}
+
+/* FOOTER FIXED TO BOTTOM */
+footer {
+  background: #eee;
+  text-align: center;
+  padding: 10px;
+  /* Removed margin-top to prevent footer floating */
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+  nav {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .profile-img {
+    width: 100px;
+  }
+}
