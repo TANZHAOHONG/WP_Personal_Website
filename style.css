@@ -107,15 +107,18 @@ nav a:hover {
 /* PROJECT GRID */
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: 1fr; /* Forces single-column layout */
   gap: 20px;
+  align-items: center;
 }
+
 
 .project-card {
   border: 1px solid #ccc;
   padding: 15px;
   background: #f9f9f9;
   transition: transform 0.3s ease-in-out;
+
 }
 
 .project-card:hover {
